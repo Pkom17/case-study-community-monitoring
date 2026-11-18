@@ -104,13 +104,15 @@ Un client sans développeur doit pouvoir réinstaller la plateforme. D'où :
 
 ## Méthode
 
-J'ai conçu l'architecture et rédigé les spécifications. Le code a été produit avec un assistant de programmation (Claude Code), dans un cadre strict :
+J'ai conçu l'architecture, rédigé les spécifications et piloté la réalisation avec une méthode volontairement stricte :
 
-- des **briefs écrits** par lot de tâches, avec des critères de fin vérifiables et des règles non négociables (protection des données, historique en ajout seul) ;
-- des **points d'arrêt** à chaque lot, avec le diff, les tests et les écarts justifiés ;
-- une **revue humaine** de chaque lot avant fusion, et aucune action sur le serveur ni aucun accès aux secrets par l'assistant.
+- des **spécifications écrites** pour chaque lot de travail, avec des critères de fin vérifiables et des règles non négociables (protection des données, historique en ajout seul) ;
+- des **points d'arrêt** à chaque lot : diff, résultats des tests et écarts justifiés, relus avant de poursuivre ;
+- une **revue de code systématique** avant chaque fusion, dont une revue complète à mi-parcours ;
+- **un test d'abord pour chaque correctif** : chaque défaut est reproduit par un test qui échoue avant d'être corrigé ;
+- la **séparation des environnements et des secrets** : aucun accès à la production ni aux identifiants pendant le développement, et des modifications en production uniquement par une procédure documentée.
 
-Cette organisation a permis de livrer en avance le back-office et l'extraction, avec une couverture de tests qu'un projet de cette taille n'a généralement pas.
+Cette méthode a permis de livrer en avance le back-office et l'extraction, avec une couverture de tests qu'un projet de cette taille n'a généralement pas.
 
 ## Ce que je retiens
 

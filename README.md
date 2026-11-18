@@ -104,13 +104,15 @@ A client without a developer must be able to reinstall the platform. Hence:
 
 ## Method
 
-I designed the architecture and wrote the specifications. The code was produced with an AI coding assistant (Claude Code), within a strict framework:
+I designed the architecture, wrote the specifications and led delivery with a deliberately strict process:
 
-- **written briefs** for each batch of tasks, with verifiable acceptance criteria and non-negotiable rules (data protection, append-only history);
-- **checkpoints** after each batch, with the diff, the tests and justified deviations;
-- **human review** of every batch before merging. The assistant never acted on the server and never had access to secrets.
+- **written specifications** for each batch of work, with verifiable acceptance criteria and non-negotiable rules (data protection, append-only history);
+- **checkpoints** after each batch: diff, test results and any justified deviation, reviewed before moving on;
+- **systematic code review** before every merge, including a full mid-project review;
+- **tests first for every fix**: each defect is reproduced by a failing test before it is corrected;
+- **separation of environments and secrets**: no production access or credentials during development, production changes only through a documented procedure.
 
-This setup delivered the back office and the data extraction ahead of plan, with a level of test coverage that projects of this size rarely reach.
+This process delivered the back office and the data extraction ahead of plan, with a level of test coverage that projects of this size rarely reach.
 
 ## Takeaways
 
